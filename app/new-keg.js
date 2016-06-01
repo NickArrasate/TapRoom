@@ -37,7 +37,7 @@ System.register(['angular2/core', './keg.model'], function(exports_1, context_1)
                     core_1.Component({
                         selector: 'keg-form',
                         outputs: ['onNewKeg'],
-                        template: "\n\n    <h2> Add a Keg:</h2>\n    <input placeholder = 'Name of Beer' class = 'col-sm-4 input-lg' #newName>\n    <input placeholder = 'Brand' class = 'col-sm-4 input-lg' #newBrand>\n    <input placeholder = 'Price' class = 'col-sm-4 input-lg' #newPrice>\n    <input placeholder = 'ABV' class = 'col-sm-4 input-lg' #newABV>\n    <button (click)= 'addKeg(newName, newBrand, newPrice, newABV)'class='btn-success btn-lg add-keg'>Add</button>\n\n  "
+                        template: "\n\n    <h2> Add a Keg:</h2>\n    <input placeholder = 'Name of Beer' class = 'col-sm-3 input-lg' #newName>\n    <input placeholder = 'Brand' class = 'col-sm-3 input-lg' #newBrand>\n    <input placeholder = 'Price' class = 'col-sm-3 input-lg' #newPrice>\n    <input placeholder = 'ABV' class = 'col-sm-3 input-lg' #newABV>\n    <button (click)= 'addKeg(newName, newBrand, newPrice, newABV)'class='btn-success btn-lg add-keg'>Add</button>\n\n  "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], NewKegComponent);

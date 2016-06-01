@@ -6,12 +6,13 @@ System.register([], function(exports_1, context_1) {
         setters:[],
         execute: function() {
             Keg = (function () {
-                // public pints: number = 124;
                 function Keg(name, brand, price, abv) {
                     this.name = name;
                     this.brand = brand;
                     this.price = price;
                     this.abv = abv;
+                    this.pints = 124;
+                    this.low = false;
                 }
                 return Keg;
             }());

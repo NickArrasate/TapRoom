@@ -1,4 +1,4 @@
-System.register(['angular2/core', './keg.model', './new-keg'], function(exports_1, context_1) {
+System.register(['angular2/core', './keg.model', './new-keg', './keg-list'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './keg.model', './new-keg'], function(exports_
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, keg_model_1, new_keg_1;
+    var core_1, keg_model_1, new_keg_1, keg_list_1;
     var AppComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', './keg.model', './new-keg'], function(exports_
             },
             function (new_keg_1_1) {
                 new_keg_1 = new_keg_1_1;
+            },
+            function (keg_list_1_1) {
+                keg_list_1 = keg_list_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -30,21 +33,22 @@ System.register(['angular2/core', './keg.model', './new-keg'], function(exports_
                         new keg_model_1.Keg('Lager', 'Brand', 4, 4)
                     ];
                 }
-                AppComponent.prototype.createKeg = function (keg) {
+                AppComponent.prototype.addKeg = function (keg) {
                     console.log(this.kegs);
                     this.kegs.push(keg);
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        directives: [new_keg_1.NewKegComponent],
-                        template: "\n  <div class = 'container'>\n    <keg-form (onNewKeg)='createKeg($event)'>\n    </keg-form>\n    <keg-list *ngFor='#keg of kegs' >\n    </keg-list>\n  </div>\n  "
+                        directives: [new_keg_1.NewKegComponent, keg_list_1.KegListComponent],
+                        template: "\n  <div class = 'container'>\n    <keg-form (onNewKeg)='addKeg($event)'>\n    </keg-form>\n    <keg-list [kegList]=\"kegs\">\n    </keg-list>\n  </div>\n  "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
             }());
             exports_1("AppComponent", AppComponent);
+            ;
         }
     }
 });
